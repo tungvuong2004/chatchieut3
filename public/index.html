@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Enhanced Chat Server</title>
+  <link rel="stylesheet" href="style.css">
+  <script src="/socket.io/socket.io.js"></script>
+</head>
+<body>
+  <header>
+    <h1>Welcome to the Enhanced Chat Server</h1>
+    <p>Chat with others, upload files, and share your thoughts!</p>
+  </header>
+
+  <main>
+    <section id="chat-section">
+      <h2>Chat with Others</h2>
+      <form id="chat-form" action="/chat" method="POST">
+        <input type="text" id="username" name="username" placeholder="Enter your username" required>
+        <textarea id="message" name="message" placeholder="Type your message here..." required></textarea>
+        <button type="submit">Send</button>
+      </form>
+      <button id="clear-chat" onclick="clearChat()">Clear Chat</button>
+      <div id="recent-messages">
+        <h3>Recent Messages</h3>
+        <ul id="messages-list"></ul>
+      </div>
+    </section>
+
+    <section id="upload-section">
+      <h2>Upload Files</h2>
+      <form id="upload-form" action="/upload" method="POST" enctype="multipart/form-data">
+        <input type="file" id="file-input" name="file" required>
+        <button type="submit">Upload</button>
+      </form>
+      <div id="uploaded-files">
+        <h3>Uploaded Files</h3>
+        <ul id="files-list"></ul>
+      </div>
+    </section>
+  </main>
+
+  <footer>
+    <p>© 2025 Enhanced Chat Server. All rights reserved.</p>
+  </footer>
+
+  <script src="script.js"></script>
+</body>
+</html>
